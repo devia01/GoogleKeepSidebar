@@ -1,0 +1,33 @@
+{
+    "name": "Google Keep",
+    "description": "Google Keep을 사이드바에서 사용할 수 있습니다",
+    "version": "1.0",
+    "manifest_version": 2,
+    "icons": {
+        "128": "img/icon.png"
+    },
+    "sidebar_action": {
+        "default_page": "index.html",
+        "default_icon": {
+            "128": "img/icon-128.png",
+            "64": "img/icon-64.png",
+            "32": "img/icon-32.png",
+            "16": "img/icon-16.png"
+        },
+        "default_title": "Google Keep",
+        "mobile_user_agent": true,
+        "use_navigation_bar": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://keep.google.com/*"
+            ],
+            "run_at": "document_end",
+            "all_frames": true,
+            "js": [
+                "script.js"
+            ]
+        }
+    ]
+}
